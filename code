@@ -1,0 +1,156 @@
+Q1
+function closure(){
+
+    let num = 5;
+    return function(num2){
+        console.log(num+num2);
+    }
+}
+let retfunction = closure();
+retfunction(90);
+
+
+
+Q2
+
+let arr = [12,78,34,76,42,65,45];
+function searchval(arr, val){
+
+    for(let i = 0;i< arr.length;i++){
+        if(arr[i] === val){
+            console.log("Number Found");
+        }
+      
+    }
+    return -1;
+}
+
+searchval(arr,41);
+
+
+
+
+Q3
+
+function addElement(){
+
+    let paragraph = document.createElement("p");
+    let text = document.createTextNode(prompt("Enter Text"));
+    paragraph.appendChild(text);
+      let element = document.getElementById("div1");
+    element.appendChild(paragraph);
+    
+
+
+}
+
+
+Q4
+
+function additem(){
+
+    let unOrder = document.getElementById("new");
+    let list = document.createElement("li");
+    let text = document.createTextNode(prompt("Enter Text"));
+    list.appendChild(text);
+    unOrder.appendChild(list);
+}
+
+
+
+
+
+
+Q5
+
+function colorChange(){
+
+    let element = document.getElementById("div");
+    element.style.backgroundColor = "#800";
+}
+
+
+
+Q6
+function addstudents(){
+let student = {
+
+    name : "Ahmed",
+    RollNo : 91,
+    ClassName : "Javascript"
+
+}
+let student2 = {
+
+    name : "Bilal",
+    RollNo : 92,
+    ClassName : "Javascript"
+
+}
+let arr = [student,student2]
+let string = JSON.stringify(arr);
+localStorage.setItem("student",string);
+
+}
+
+addstudents();
+
+
+
+
+Q7
+
+
+ function AddStudent(){
+
+
+ let oldRecord = localStorage.getItem("students"); 
+ let students = oldRecord ? JSON.parse(oldRecord) : [];
+let student = {
+     name : "Khalid",
+         rollNo : 564,
+         teacher : "Noman",
+        className: "Javascript"
+}
+students = student;
+let stringify  = JSON.stringify(students);
+localStorage.setItem("students",stringify);
+
+}
+ 
+AddStudent();
+
+
+
+
+
+Q8
+
+
+let showStudents = localStorage.getItem("students");
+let students = showStudents ? JSON.parse(showStudents) : []; 
+
+function newStudents(){
+    let std = {
+        name : prompt("Enter Name"),
+            rollNo : +prompt("Enter Roll No"),
+            teacher : prompt("Enter Teacher"),
+           className: prompt("Enter Your Class")
+   }
+
+   students.push(std);
+   let string = JSON.stringify(students);
+
+   localStorage.setItem("students",string);
+
+}
+
+newStudents();
+console.log(showStudents);
+
+
+
+
+
+
+
